@@ -1,5 +1,5 @@
 :root{
-    --bg1-color: #1B1B1B;
+    --second-color: #1B1B1B;
     --primary-color: #FFF;
 
 }
@@ -8,11 +8,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: ;
+    font-family: 'Public', sans-serif;
 }
 
 header{
-    background-color: var(--bg1-color);
+    background-color: var(--primary-color);
 }
 
 nav{
@@ -21,11 +21,11 @@ nav{
     justify-content: space-between;
     height: 120px;
     padding: 0 50px;
-  }
+}
 
 a{
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--second-color);
 }
 
 li{
@@ -39,3 +39,85 @@ li{
     font-size: 1.1rem;
     font-weight: 600;
   }
+
+.banner-home{
+    background-image: url(../img/banner-sistema-solar.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    width: 100%;
+  }
+
+  .banner-card{
+    color: #FFF;
+    padding: 30px 200px;
+    width: 600px;
+}
+
+footer{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items:baseline;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+
+.divFooter{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    gap: 10px;
+}
+
+.ulFooter{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0rem;
+}
+
+.iconsFooter{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    justify-content: space-around;
+}
+
+.slider-pictures{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    justify-content: flex-start;
+    align-content: flex-start;
+    padding: 40px 10px;
+ }
+
+ .slider-picture-picture{
+    border-radius: 20px;
+    width: 270px;    
+    min-width: 170px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 450ms all;
+    transform-origin: center left;
+    transition: transform .5s;
+  }
+
+  .slider-picture-picture:hover{
+    transform: scale(1.2);
+  }
+  .img-slider-home{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
