@@ -123,10 +123,10 @@ footer{
   }
 
   .grid-container-home{
-    margin: 10px;
+    margin: 2vw;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 2vw;
+    gap: 1vw;
   }
 .grid-item-home{
     overflow: hidden;
