@@ -118,7 +118,19 @@ footer{
     object-fit: cover;
   }
 
+  /* estilos para el grid */
+
+  html{
+
+    scroll-behavior: smooth; /*suaviza el salto hacia el grid*/
+  }
+
+  #grid {
+    scroll-snap-type: y proximity;
+    transition: scroll-snap-type 0.3s ease-in-out;
+}
   .grid-container-home{
+ 
     margin: 2vw;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
