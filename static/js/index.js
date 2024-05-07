@@ -55,4 +55,25 @@ gridBuild([
 ]);
 
 
-        
+/*Cuando se hace click en el botón, muestra el submenu*/
+function ShowHideMenu() {   
+    //Añade una clase al elemento que tenga el id myDropdown
+    document.getElementById("navStyleId").classList.toggle("showNav");
+  }
+  
+  //Cierra el submenu si se clica fuera
+  window.onclick = function(event){
+    if(!event.target.matches('.imgClick')) {
+      var dropdowns = document.getElementsByClassName("navStyle");
+      console.log(dropdowns)
+      var i;
+      for (i = 0;  i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        console.log(openDropdown)
+        if (openDropdown.classList.contains('showNav')){
+            console.log(openDropdown)
+            openDropdown.classList.remove('showNav');
+        }
+      }
+    }
+  }        

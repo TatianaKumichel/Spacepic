@@ -1,31 +1,23 @@
 :root{
     --second-color: #1B1B1B;
     --primary-color: #FFF;
-
+    --common-font: 'Open Sans', sans-serif;
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Public', sans-serif;
+    font-family: var(--common-font);
 }
 
 header{
     background-color: var(--primary-color);
 }
 
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 120px;
-    padding: 0 50px;
-}
-
 a{
     text-decoration: none;
-    color: var(--second-color);
+    color: var(--primary-color);
 }
 
 .nav-links{
@@ -48,37 +40,6 @@ a{
     color: #FFF;
     padding: 30px 200px;
     width: 600px;
-}
-
-footer{
-    width: 100%;
-    height: 300px;
-    display: flex;
-    flex-direction: row;
-    align-items:baseline;
-    justify-content: space-around;
-    padding-top: 30px;
-}
-
-.divFooter{
-    display:flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 0;
-    gap: 10px;
-}
-
-.ulFooter{
-    display: flex;
-    flex-direction: column;
-    padding-left: 0rem;
-}
-
-.iconsFooter{
-    display: flex;
-    align-items: center;
-    width: 200px;
-    justify-content: space-around;
 }
 
 .slider-pictures{
@@ -208,7 +169,7 @@ footer{
 /* Estilo para el encabezado "Registro" */
 #modalRegistro h2 {
     color: #2ed1fa;
-    font-family: Arial, sans-serif; /* Cambiar la fuente del encabezado */
+    font-family: var(--common-font); /* Cambiar la fuente del encabezado */
     font-size: 24px; /* Cambiar el tamaño de la letra del encabezado */
     font-weight: bold; /* Establecer negrita para el encabezado */
     margin-bottom: 20px; /* Añadir espacio debajo del encabezado */
@@ -221,3 +182,395 @@ footer{
     color: #2ed1fa;
 }
 
+/*Estilos para Header NAV*/
+.containerMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+    padding: 0 50px;
+    background-color: var(--second-color);
+    color: var(--primary-color);
+}
+
+.containerMenu img {
+    height: 80%;
+    width: 80%;
+}
+
+.containerMenu a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navStyle {
+    padding: 10px 10px;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px 0 0;
+}
+
+.navStyle a {
+    font-family: var(--common-font); 
+    text-transform: uppercase;
+    color: var(--primary-color);
+    padding: 10px 10px;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+.navStyle a:first-child{
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.navStyle a:hover{
+    background-color: var(--primary-color);
+    color: var(--second-color);
+}
+
+.logoFont {
+    color: white;
+    font-weight: bold;
+}
+
+.logoImg {
+    margin-bottom: 10px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(104deg) brightness(103%) contrast(103%);
+}
+
+.menuMobile {
+    width: 3rem;
+    display: none;
+    float: right;
+    text-align: right;
+}
+
+.menuMobile:hover {
+    cursor: pointer;
+}
+
+.menuMobileList {
+    display: none;
+}
+
+.menuMobileList  img{
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(104deg) brightness(103%) contrast(103%); 
+}
+
+.menuMobileList:hover  img{
+    filter: invert(50%) sepia(100%) saturate(0%) hue-rotate(104deg) brightness(103%) contrast(103%); 
+}
+
+.menuMobile img {
+    height: 8px;
+    margin-bottom: 6px;
+    display: block; 
+    background-color: white;   
+}
+
+.containerNav {
+    position: relative;
+    align-items: center;
+}
+
+/*Estilos para Footer */
+
+footer{
+    height: 250px;
+    background-color: var(--second-color);
+    color: var(--primary-color);
+    align-content: end;
+}
+
+.infoFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.contactFooter {
+    align-items: center;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.contactFooter h4{
+    margin-bottom: 10px;
+}
+
+.divFooter{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+}
+.divRedesFooter {
+    margin-top: 20px;
+}
+
+.mapFooter h4{
+    margin-left: 10px;
+}
+
+.ulFooter{
+    list-style:none;
+    margin: 15px;
+    columns: 2; 
+    -webkit-columns: 2; 
+    -moz-columns: 2;     
+}
+
+.ulFooter li {
+    padding: 3px;
+}
+
+.ulFooter a:hover {
+    text-decoration-line: underline;
+}
+
+.iconsFooterSM{
+    margin-top: 10px;
+}
+
+.iconsFooterSM a {   
+    align-items: center;    
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.iconsFooterSM a:last-child {   
+    margin-right: 0;
+}
+
+
+.telFooter i{
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+.telFooter a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+.copyrightFooter {
+    background-color: #2e2e2e;
+    color: white;
+    padding: 10px ;
+    margin-top: 30px;
+    text-align: center; 
+    font-family: var(--common-font);   
+    font-size: 0.7rem;
+}
+
+.copyrightFooter span {
+    font-weight: bold;
+}
+
+/*Fondo Testimonios*/
+
+.divTestimonios {
+    position: relative;
+    height: 600px;
+}
+
+.divTestimonios::before {
+    background-image: url(../img/imgTestimonio.jpg);  
+    content: '';
+}
+
+.parallax::before { /*Significa efecto de fondo fijo*/
+    width :100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;   /*Arrastrar y ver de fondo la imagen estatica*/
+    -webkit-filter: brightness(.7);
+    filter: brightness(.7);
+}
+
+.contenidoTestimonio {
+    color:var(--primary-color);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.contenidoTestimonio p {
+    font-size: 1.2em; 
+ }
+ 
+.contenidoTestimonio h3 {
+     color:var(--primary-color);
+     text-transform: uppercase; 
+     font-size: 5vw;
+     font-family: var(--common-font);
+     margin-bottom: 20px;
+  }
+  
+.contenidoTestimonio a {
+     font-size: 1.6rem;
+}
+
+.casosExitoTestimonioContainer {
+    display: flex;
+    margin:20px 10px 0px 10px;
+}
+
+.casosExito {
+    color:var(--primary-color);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    background-color: rgba(245, 127, 35, 0.42);
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    font-family: var(--common-font);
+}
+
+
+
+.casosExitoTestimonioContainer :last-child{
+    margin-left: 30px;
+}
+
+.casosExitoTestimonioContainer {
+    display: flex;    
+}
+
+.casosExitodiv {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.casosExitodiv h3 {
+    color:var(--primary-color);
+    text-transform: uppercase; 
+    font-size: 5vw;
+    font-family: var(--common-font);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.casosExito p {
+    text-transform: lowercase;
+    font-style: italic;
+}
+
+.casosExito span {
+    font-weight: bold;
+    text-align: right;
+}
+
+/*Resizeable*/
+
+@media (max-width: 768px) {
+    .containerMenu {
+        height: 80px;
+    }
+    .containerMenu a {
+        font-size: 60%;
+    }
+    .containerMenu img {
+        height: 70%;
+        width: 70%;
+    }  
+    .navStyle a {
+        font-size: 80%;
+        
+    }   
+}
+
+@media  (max-width: 576px) {
+    
+    .menuMobileList { 
+        display: flex;
+        width: 60px;
+        justify-content: center;        
+    }
+    .menuMobile {
+        display: block;
+    } 
+    .navStyle {
+        display: none;
+        position:absolute;
+        top: 70px;
+        right: 0;
+        padding: 0;
+        min-width: 100px;
+        background-color: var(--primary-color);
+        z-index: 1;       
+    }
+    .navStyle a:first-child{
+        border: 0px;
+        color: var(--second-color);
+    }    
+    .navStyle a {
+        color: var(--second-color);
+        display: block;
+        text-align: center;
+    }
+    .navStyle a:hover{
+        background-color: var(--second-color);
+        color: var(--primary-color);
+    }
+    .containerMenu a{ 
+        flex-direction: row;
+        align-items: center;
+    }
+    .logoFont {
+        font-size: 40px;
+        margin-left: 20px;
+    }
+    .showNav {
+        display: block;
+    }
+
+    .casosExitoTestimonioContainer {
+        flex-direction: column;
+        margin: 30px
+    } 
+    
+    .casosExitoTestimonioContainer :last-child{
+        margin-left: 0px;
+    }
+
+    .casosExito {
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .casosExito p{
+        font-size: 80%;
+    }
+
+    footer {
+        font-size: small;
+
+    }
+    .ulFooter{
+        list-style:none;
+        margin: 15px;
+        columns: 1; 
+        -webkit-columns: 1; 
+        -moz-columns: 1;     
+    }
+    
+      
+}
