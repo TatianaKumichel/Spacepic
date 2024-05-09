@@ -8,6 +8,7 @@
     <link rel="icon" href="./static/img/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--  Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet"><!--  NewFont --> 
 
@@ -48,7 +49,8 @@
             </div>
         </section>
 
-          <!-- GRID DEL HOME -->
+          <!------ GRID DEL HOME  Section 1 ------>
+
         <section id="grid">
             <div class="grid-container-home">
 
@@ -57,7 +59,7 @@
             </div>
         </section>  
 
-        <!-- MÁS CONTENIDO HACIA ABAJO -->
+        <!----- CARROUSEL Section 2 ----->
         
         <section id="carrousel">
             <div class="carrouselContainer">
@@ -102,7 +104,7 @@
                             <img src="./static/img/Space image 1.jpeg" alt="" class="img-slider-home">
                         </li>                                               
                     </ul>
-                    <!--
+                    <!-- ORIGINAL
                     <div class="slider-picture-picture">
                         <img src="./static/img/Space image 1.jpeg" alt="" class="img-slider-home">
                     </div>
@@ -139,7 +141,7 @@
             </div>
         </section>
 
-        <!-- TESTIMONIOS -->
+        <!--------- TESTIMONIOS  Section 3 ----------->
 
         <section id="testimonios">
             <div class="divTestimonios parallax">
@@ -165,10 +167,13 @@
                 </div>                    
             </div>
         </section>
-        <!--SECCION CONTACTO-->
+
+        <!----------- CONTACTO  Section 4 ------------------->
+        
+
         <section id="contacto">
             <div class="containerContacto">
-                <form>
+                <form id="contactForm" onsubmit="return validarFormulario()">
                     <div class="containerDatos">
                         <div class="datos">
                             <div class="agrupadoContactoDatos">
@@ -185,9 +190,20 @@
                             </div>                        
                         </div>
                         <div class="agrupadoContactoComentario">
-                            <label for="nombre">Comentario: </label>   
-                            <textarea id="comentario" name="comentario" rows="10" cols="50">Hola deseo que me contacten</textarea>
+                            <label for="nombre">Hablemos! </label>   
+                            <textarea id="comentario" name="comentario" rows="10" cols="50">Escribir aquí el mensaje...</textarea>
                         </div>
+                    </div>
+                    <div class="datos2">
+                        <div class="agrupadoContactoComentario">
+                            <label for="imagen">Adjuntar imagen:</label>
+                            <input type="file" id="imagen" name="imagen">
+                        </div>
+                        <div class="agrupadoContactoComentario">
+                            <input type="checkbox" id="suscripcion" name="suscripcion">
+                            <label for="verificacion">Haz click aquí antes de enviar!</label>
+                        </div>
+                        
                     </div>
                     <button name="registrarse">Contactenme</button> 
                 </form>            
