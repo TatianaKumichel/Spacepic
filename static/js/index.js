@@ -104,3 +104,49 @@ function sideScroll(element,direction,speed,distance,step){
         }
     }, speed);
 }
+
+function validarFormulario() {
+    var nombre = document.getElementById('nombre').value;
+    var email = document.getElementById('email').value;
+    var mensaje = document.getElementById('mensaje').value;
+    var motivo = document.getElementById('motivo').value;
+    var imagen = document.getElementById('imagen').value;
+
+    var nombreError = document.getElementById('nombreError');
+    var emailError = document.getElementById('emailError');
+    var mensajeError = document.getElementById('mensajeError');
+    var motivoError = document.getElementById('motivoError');
+    var imagenError = document.getElementById('imagenError');
+
+    nombreError.textContent = '';
+    emailError.textContent = '';
+    mensajeError.textContent = '';
+    motivoError.textContent = '';
+    imagenError.textContent = '';
+
+    var validado = true;
+
+    if (nombre === '') {
+        nombreError.textContent = 'Por favor, ingresa tu nombre';
+        validado = false;
+    }
+
+    if (email === '') {
+        emailError.textContent = 'Por favor, ingresa tu email';
+        validado = false;
+    }
+
+    // Agregar más validaciones según sea necesario...
+
+    if (motivo === '') {
+        motivoError.textContent = 'Por favor, selecciona un motivo';
+        validado = false;
+    }
+
+    if (imagen === '') {
+        imagenError.textContent = 'Por favor, adjunta una imagen';
+        validado = false;
+    }
+
+    return validado;
+}
