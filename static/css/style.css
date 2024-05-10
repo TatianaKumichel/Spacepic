@@ -137,18 +137,39 @@ html{
     scroll-behavior: smooth; /*suaviza el salto hacia el grid*/
   }
 
+main{
+    background-color: var(--second-color);
+}
+
+#grid h3 {
+    font-family: var(--common-font);
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 4vw;
+}
+#grid h4 {
+    font-family: var(--common-font);
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2vw;
+}
+
 #grid {
+    margin: 0;
+    background-color: var(--second-color);
     scroll-snap-type: y proximity;
     transition: scroll-snap-type 0.3s ease-in-out;
 }
-  .grid-container-home{
- 
-    margin: 2vw;
+  .grid-container{
+    margin: 2%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1vw;
+    gap: 3%;
+    background-color: var(--second-color);
   }
-.grid-item-home{
+.grid-item{
     overflow: hidden;
     justify-content: center;
     align-items: center;
@@ -162,8 +183,8 @@ html{
     transition: transform 500ms;
 }
 
-.grid-item-home:hover{
-    transform: scale(1.05);
+.grid-item:hover{
+    transform: scale(1.07);
   }
 
   /* Estilos para el modal */

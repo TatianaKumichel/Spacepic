@@ -25,9 +25,9 @@ function cerrarModal() {
 // Esta funcion agrega las imagenes al grid
 
 function gridBuild(pictures){
-    const gridContainer = document.querySelector(".grid-container-home");
+    const gridContainer = document.querySelector(".grid-container");
     pictures.forEach(element => {
-        const srcImg = `<img src="./static/img/${element}" alt="${element}" class="grid-item-home">`
+        const srcImg = `<img src="./static/img/${element}" alt="${element}" class="grid-item">`
         gridContainer.insertAdjacentHTML('beforeend',srcImg);
     });
 }
