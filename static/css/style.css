@@ -659,6 +659,21 @@ footer{
         
     }   
 
+
+    /* estilos para el grid */
+
+    #grid h3 {
+        font-size: 5vw;
+    }
+    #grid h4 {
+        font-size: 3vw;
+    }
+
+    .grid-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
     .carrouselContainer {
         height: 400px;
     }
@@ -728,6 +743,21 @@ footer{
     .showNav {
         display: block;
     }
+
+    /* estilos para el grid */
+
+    #grid h3 {
+        font-size: 5vw;
+    }
+    #grid h4 {
+        font-size: 3vw;
+    }
+
+    .grid-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
 
     .casosExitoTestimonioContainer {
         flex-direction: column;
