@@ -34,18 +34,37 @@ a{
   }
 
 .banner-home{
-    background-image: url(../img/banner-sistema-solar.jpg);
+    background-image: url(../img/bannerbg.jpg);
     background-size: cover;
     background-position: center;
     height: 600px;
     width: 100%;
   }
 
-  .banner-card{
+.banner-card{
+    display: flex;
+    flex-direction: column;
     color: #FFF;
-    padding: 30px 200px;
-    width: 600px;
+    padding: 30px ;
 }
+
+.banner-card h1{
+    align-content: center;
+    text-align: center;
+    font-size: 3vw;
+    text-transform: uppercase;
+    text-shadow: #ccc 1px 0 10px;
+}
+
+.banner-card span {
+    animation: fadeIn 3s ease;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+
+}
+
 
 .slider-pictures{
     display: flex;
@@ -207,7 +226,7 @@ main{
     border: 1px solid #1dd7dd;
     width: 50%;
     max-width: 600px;
-    background-image: url('/static/img/freepik-export-202404281855263FSG.jpeg'); /* Ruta de la imagen de fondo */
+    background-image: url('/static/img/spaimg12.jpeg'); /* Ruta de la imagen de fondo */
     background-size: cover; /* Ajustar la imagen al tamaño del modal */
     background-position: center; /* Centrar la imagen */
 }
@@ -630,6 +649,19 @@ footer{
     text-align: left;
 }
 
+.agrupadoContactoComentario input[type="file"] {
+    position: fixed;
+    right: 100%;
+    bottom: 100%;
+}
+
+.fakeFile {
+    border: 1px solid var(--primary-color);
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;  
+}
+
 .datos2{
     width: 100%;
     display: flex;
@@ -639,13 +671,34 @@ footer{
     color: red;
 }
 
+
 /*Resizeable*/
+/* Para el baner fondo */
+
+@media screen and (max-width: 1000px) {
+    .banner-home {
+        height: 300px;
+    }
+
+    .navStyle a {
+        font-size: 80%;
+    }
+
+}
+
 
 /* <-------------------------------- TABLET ----------------------------------> */
 
 @media screen and (max-width: 768px) {
+
+    .carrousel {
+        height: 80%
+
+    }
+
     .containerMenu {
         height: 80px;
+        padding: 5px;
     }
     .containerMenu a {
         font-size: 60%;
@@ -654,11 +707,17 @@ footer{
         height: 70%;
         width: 70%;
     }  
+    .navStyle {
+        padding: 0;
+        margin: 0;
+    }
     .navStyle a {
-        font-size: 80%;
-        
+        font-size: 60%;
     }   
 
+    .banner-card h1{
+        font-size: 4vw;
+    }
 
     /* estilos para el grid */
 
@@ -673,10 +732,6 @@ footer{
         grid-template-columns: repeat(3, 1fr);
     }
 
-
-    .carrouselContainer {
-        height: 400px;
-    }
 
     .slider-pictures {
         height: auto;
@@ -700,7 +755,16 @@ footer{
 }
 /* <-------------------------------- MOBILE ----------------------------------> */
 @media screen and (max-width: 576px) {
-    
+
+    .banner-home {
+        height: 200px;
+    }
+
+    .banner-card {
+        font-size: 2.5vw;
+        padding: 30px;
+    }
+
     .menuMobileList { 
         display: flex;
         width: 60px;
@@ -709,6 +773,12 @@ footer{
     .menuMobile {
         display: block;
     } 
+
+    .menuMobileList img {
+        height: 30px;
+        width: 30px;
+    }
+
     .navStyle {
         display: none;
         position:absolute;
@@ -737,8 +807,8 @@ footer{
         align-items: center;
     }
     .logoFont {
-        font-size: 40px;
-        margin-left: 20px;
+        font-size: 6vw;
+        margin-left: 10px;
     }
     .showNav {
         display: block;
@@ -807,11 +877,11 @@ footer{
         width: 50%;
     }    
     .agrupadoContactoDatos  label {
-        font-size: 3vw;
+        font-size: 2vw;
     }
  
     .agrupadoContactoComentario label {
-        font-size: 3vw;
+        font-size: 2vw;
     }  
 
       

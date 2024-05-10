@@ -35,21 +35,22 @@ function gridBuild(pictures){
 // Llamada a la funcion gridBuild() pasando un array con los nombres de las imagenes como parametro
 
 gridBuild([
-    "Space image 1.jpeg", 
-    "Space image 2.jpeg",
-    "Space image 3.jpeg",
-    "Space image 4.jpeg",
-    "Space image 5.jpeg",
-    "butterfly-nebula-dying-star-elements-260nw-1904626690.webp",
-    "europe-night-viewed-space-city-260nw-1072726052.webp",
-    "gas-giant-planet-system-planetary-260nw-2340264245.webp",
-    "nebula-cluster-stars-deep-space-260nw-1795367731.webp",
-    "ACD17-0168-009~large.jpg",
-    "GSFC_20171208_Archive_e000963~orig.jpg",
-    "GSFC_20171208_Archive_e001465~orig.jpg",
-    "GSFC_20171208_Archive_e001518~medium.jpg",
-    "PIA02973~large.jpg",
-    "PIA09967~large.jpg",
+    "spaimg1.jpeg", 
+    "spaimg2.jpeg",
+    "spaimg3.jpeg",
+    "spaimg4.jpeg",
+    "spaimg5.jpeg",
+    "spaimg6.jpeg",
+    "spaimg7.webp",
+    "spaimg8.webp",
+    "spaimg9.webp",
+    "spaimg10.webp",
+    "spaimg11.webp",
+    "spaimg12.jpeg",
+    "spaimg13.jpg",
+    "spaimg14.jpg",
+    "spaimg15.jpg",
+    "spaimg16.webp",
 ]);
 
 

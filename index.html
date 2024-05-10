@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!--  Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet"><!--  NewFont --> 
 
     <link rel="stylesheet" href="./static/css/style.css">
@@ -44,12 +43,11 @@
     <main>
         <section class="banner-home">
             <div class="banner-card">
-                <h1>Sistema Solar</h1>
-                <h4>Nuestro sistema solar está formado por 1 Estrella, 8 Planetas, 146 Lunas, numerosos cometas, asteroides, rocas espaciales, hielo y varios planetas enanos.</h4>
+                <h1><span>Soñá sin Fronteras</span></h1>
             </div>
         </section>
 
-          <!------ GRID DEL HOME  Section 1 ------>
+          <!-- GRID DEL HOME  Section 1 -->
         <section id="grid">
             <h3>Elejí tu cuadro</h3>
             <h4>Tenemos el mejor catálogo</h4>
@@ -60,7 +58,7 @@
             </div>
         </section>  
 
-        <!----- CARROUSEL Section 2 ----->
+        <!-- CARROUSEL Section 2 -->
         
         <section id="carrousel">
             <div class="carrouselContainer">
@@ -75,34 +73,34 @@
                 <div id="slider" class="slider-pictures">
                     <ul >
                         <li class="slider-picture-picture">
-                            <img src="./static/img/Space image 2.jpeg" alt="" class="img-slider-home">
+                            <img src="./static/img/spaimg2.jpeg" alt="" class="img-slider-home">
                         </li>
                         <li class="slider-picture-picture">
-                            <img src="./static/img/Space image 3.jpeg" alt="" class="img-slider-home">
+                            <img src="./static/img/spaimg3.jpeg" alt="" class="img-slider-home">
                         </li>
                         <li class="slider-picture-picture">
-                            <img src="./static/img/Space image 4.jpeg" alt="" class="img-slider-home">
+                            <img src="./static/img/spaimg4.jpeg" alt="" class="img-slider-home">
                         </li>
                         <li class="slider-picture-picture">
-                            <img src="./static/img/Space image 5.jpeg" alt="" class="img-slider-home">
+                            <img src="./static/img/spaimg5.jpeg" alt="" class="img-slider-home">
                         </li>
                         <li class="slider-picture-picture">
-                            <img src="./static/img/banner-sistema-solar.jpg" alt="" class="img-slider-home">
-                        </li>
-                        <li class="slider-picture-picture">
-                            <img src="./static/img/butterfly-nebula-dying-star-elements-260nw-1904626690.webp" alt="" class="img-slider-home">
+                            <img src="./static/img/spaimg6.jpeg" alt="" class="img-slider-home">
                         </li>
                         <li  class="slider-picture-picture">
-                            <img src="./static/img/europe-night-viewed-space-city-260nw-1072726052.webp" alt="" class="img-slider-home">
+                            <img src="./static/img/spaimg7.webp" alt="" class="img-slider-home">
                         </li>
                         <li class="slider-picture-picture">
-                            <img src="./static/img/gas-giant-planet-system-planetary-260nw-2340264245.webp" alt="" class="img-slider-home">
+                            <img src="./static/img/spaimg8.webp" alt="" class="img-slider-home">
                         </li>
                         <li  class="slider-picture-picture">
-                            <img src="./static/img/nebula-cluster-stars-deep-space-260nw-1795367731.webp" alt="" class="img-slider-home">
-                        </li> 
+                            <img src="./static/img/spaimg9.webp" alt="" class="img-slider-home">
+                        </li>
                         <li class="slider-picture-picture">
-                            <img src="./static/img/Space image 1.jpeg" alt="" class="img-slider-home">
+                            <img src="./static/img/spaimg10.webp" alt="" class="img-slider-home">
+                        </li>                         
+                        <li class="slider-picture-picture">
+                            <img src="./static/img/spaimg11.webp" alt="" class="img-slider-home">
                         </li>                                               
                     </ul>
                     <!-- ORIGINAL
@@ -142,7 +140,7 @@
             </div>
         </section>
 
-        <!--------- TESTIMONIOS  Section 3 ----------->
+        <!-- TESTIMONIOS  Section 3 -->
 
         <section id="testimonios">
             <div class="divTestimonios parallax">
@@ -169,7 +167,7 @@
             </div>
         </section>
 
-        <!----------- CONTACTO  Section 4 ------------------->
+        <!-- CONTACTO  Section 4 -->
         
 
         <section id="contacto">
@@ -197,12 +195,15 @@
                     </div>
                     <div class="datos2">
                         <div class="agrupadoContactoComentario">
-                            <label for="imagen">Adjuntar imagen:</label>
-                            <input type="file" id="imagen" name="imagen">
+                            <label for="lblImagen">Adjuntar imagen</label>
+                            <label for="file" class="fakeFile">
+                                <i class="fa fa-cloud-upload"></i> Seleccionar Archivo
+                            </label>
+                            <input id="file" type="file"/>
                         </div>
                         <div class="agrupadoContactoComentario">
                             <input type="checkbox" id="suscripcion" name="suscripcion">
-                            <label for="verificacion">Haz click aquí antes de enviar!</label>
+                            <label for="lblVerificacion">Acepto terminos y condiciones.</label>
                         </div>
                         
                     </div>
@@ -219,27 +220,15 @@
         <div class="divFooter">
             <div class="mapFooter">
                 <h4>MAPA DEL SITIO</h4>
-                <section>
-                    <nav>
-                        <ul class="ulFooter">
-                            <li>
-                                <a href="./index.html">Home</a>
-                            </li>
-                            <li>
-                                <a href="#grid">Imagenes/Cuadros</a>
-                            </li>
-                            <li>
-                                <a href="#contacto">Contacto</a>
-                            </li>
-                            <li>
-                                <a href="#testimonios">Nosotros</a>
-                            </li>
-                            <li>
-                                <a href="#modalRegistro" onclick="mostrarModal()">Ingresar</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </section>
+                <nav>
+                    <ul class="ulFooter">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="#grid">Imagenes/Cuadros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#testimonios">Nosotros</a></li>
+                        <li><a href="#modalRegistro" onclick="mostrarModal()">Ingresar</a></li>
+                    </ul>
+                </nav>
             </div>            
             <div class="contactFooter">
                 <h4>CONTACTO</h4>
@@ -252,7 +241,7 @@
                 <div class="divRedesFooter">
                     <h4>REDES SOCIALES</h4>
                     <nav class="iconsFooterSM">
-                        <a href="#"><i class="fa-brands fa-facebook-f""></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                         <a href="#"><i class="fa-brands fa-youtube"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -272,11 +261,11 @@
             <span class="close" onclick="cerrarModal()">&times;</span>
             <h2>REGISTRO</h2>
             <form>
-                <label for="nombre">Nombre: </label>
+                <label for="lblNombre">Nombre: </label>
                 <input type="text" id="nombre" name="nombre" required>
                 <br>
                 <br>
-                <label for="email">Email: </label>
+                <label for="lblEmail">Email: </label>
                 <input type="email" id="email" name="email" required>
                 <br>
                 <br>
