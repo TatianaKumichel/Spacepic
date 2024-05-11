@@ -12,14 +12,13 @@ function mostrarModal() {
 
 // Esta función cierra el modal de registro
 function cerrarModal() {
-    // Obtiene el elemento modal de registro por su ID
     var modal = document.getElementById('modalRegistro');
-    // Verifica si el modal existe
+    
     if (modal) {
-        // Si el modal existe, cambia su estilo para ocultarlo (display: none)
         modal.style.display = 'none';
     }
 }
+
 
 
 // Esta funcion agrega las imagenes al grid
