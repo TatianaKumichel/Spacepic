@@ -217,22 +217,24 @@ main{
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
+    
 }
 
 .modal-content {
     background-color:#413583;
     margin: 5% auto; 
     padding: 20px;
-    border: 1px solid #1dd7dd;
+    border: 1px solid #101313;
     width: 50%;
     max-width: 600px;
-    background-image: url('/static/img/spaimg12.jpeg'); /* Ruta de la imagen de fondo */
+    background-image: url('/static/img/europe-night-viewed-space-city-260nw-1072726052.webp'); /* Ruta de la imagen de fondo */
     background-size: cover; /* Ajustar la imagen al tamaño del modal */
     background-position: center; /* Centrar la imagen */
+    border-radius: 10px;
 }
 
 .close {
-    color: #34d6f3; 
+    color: #8a8b28; 
     font-size: 28px;
     font-weight: bold;
     position: absolute;/*ajusra la posicion*/
@@ -250,25 +252,47 @@ main{
 }
 
 #modalRegistro {
-    /* Otros estilos del modal */
-    color: aqua;
+
     text-align: center; /* Centrar el contenido del modal */
+    border-radius: 10px
+    
 }
+#modalRegistro input[type="text"],
+#modalRegistro input[type="email"]{
+    font-size: 20px;
+    border-radius: 5px; /* Redondear los bordes */
+    padding: 5px; /* Añadir un poco de espacio alrededor del texto */
+    margin-bottom: 10px; /* Espacio entre los campos */
+    width: 300px; /* Ancho deseado */
+}
+#modalRegistro input[type="submit"]{
+
+    border-radius: 5px;
+    padding: 5px; 
+    margin-bottom: 10px; 
+    width: 150px; 
+    font-size: 20px;
+
+
+}
+
 
 /* Estilo para el encabezado "Registro" */
 #modalRegistro h2 {
-    color: #2ed1fa;
+    color: #e1e2b8;
     font-family: var(--common-font); /* Cambiar la fuente del encabezado */
-    font-size: 24px; /* Cambiar el tamaño de la letra del encabezado */
+    font-size: 30px; /* Cambiar el tamaño de la letra del encabezado */
     font-weight: bold; /* Establecer negrita para el encabezado */
     margin-bottom: 20px; /* Añadir espacio debajo del encabezado */
 }
 #modalRegistro form {
 
+    font-size: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #2ed1fa;
+    color:#e1e2b8;
+    
 }
 
 /*Estilos para Header NAV*/
