@@ -26,8 +26,24 @@ function cerrarModal() {
 function gridBuild(pictures){
     const gridContainer = document.querySelector(".grid-container");
     pictures.forEach(element => {
-        const srcImg = `<img src="./static/img/${element}" alt="${element}" class="grid-item">`
-        gridContainer.insertAdjacentHTML('beforeend',srcImg);
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('grid-item');
+
+        const imgCont = document.createElement('div');
+        imgCont.classList.add('grid-image-container');
+
+        const imgSrc = document.createElement('img');
+        imgSrc.src = `./static/img/${element}`;
+        imgSrc.alt = element;
+
+        const hoverButton = document.createElement('button');
+        hoverButton.classList.add('grid-hover-button');
+        hoverButton.textContent = 'Comprar';
+
+        gridItem.appendChild(imgCont);
+        imgCont.appendChild(imgSrc);
+        imgCont.appendChild(hoverButton);
+        gridContainer.appendChild(gridItem);
     });
 }
 

@@ -188,13 +188,14 @@ main{
     gap: 3%;
     background-color: var(--second-color);
   }
+
 .grid-item{
     overflow: hidden;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 30vw;
+    object-fit:cover;
     object-position: center;
     border-radius: 5%;
     transition: 450ms all;
@@ -205,6 +206,39 @@ main{
 .grid-item:hover{
     transform: scale(1.07);
   }
+
+
+
+  .grid-image-container {
+    position: relative;
+    height: 100%;
+    /* display: inline-block; */
+  }
+  
+  .grid-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .grid-hover-button {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .grid-image-container:hover .grid-hover-button {
+    opacity: 1;
+  }
+  
 
   /* Estilos para el modal */
 .modal {
