@@ -165,14 +165,14 @@ main{
     font-weight: bold;
     color: var(--primary-color);
     text-align: center;
-    font-size: 4vw;
+    font-size: 3vw;
 }
 #grid h4 {
     font-family: var(--common-font);
     font-weight: bold;
     color: var(--primary-color);
     text-align: center;
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 
 #grid {
@@ -722,10 +722,10 @@ footer{
     /* estilos para el grid */
 
     #grid h3 {
-        font-size: 5vw;
+        font-size: 4vw;
     }
     #grid h4 {
-        font-size: 3vw;
+        font-size: 2vw;
     }
 
     .grid-container{
@@ -820,7 +820,7 @@ footer{
         font-size: 5vw;
     }
     #grid h4 {
-        font-size: 3vw;
+        font-size: 2.5vw;
     }
 
     .grid-container{

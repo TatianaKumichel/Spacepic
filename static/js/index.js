@@ -50,7 +50,6 @@ gridBuild([
     "spaimg13.jpg",
     "spaimg14.jpg",
     "spaimg15.jpg",
-    "spaimg16.webp",
 ]);
 
 
