@@ -26,23 +26,27 @@ function cerrarModal() {
 function gridBuild(pictures){
     const gridContainer = document.querySelector(".grid-container");
     pictures.forEach(element => {
+        // crea los elementos div y les agrega la clase
         const gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
+        
+        const imgContainer = document.createElement('div');
+        imgContainer.classList.add('grid-image-container');
 
-        const imgCont = document.createElement('div');
-        imgCont.classList.add('grid-image-container');
+        // crea un elemento img y le agrega el source y el alt
+        const img = document.createElement('img');
+        img.src = `./static/img/${element}`;
+        img.alt = element;
 
-        const imgSrc = document.createElement('img');
-        imgSrc.src = `./static/img/${element}`;
-        imgSrc.alt = element;
-
+        // crea un elemento button y le agrega el texto y la clase
         const hoverButton = document.createElement('button');
         hoverButton.classList.add('grid-hover-button');
         hoverButton.textContent = 'Comprar';
 
-        gridItem.appendChild(imgCont);
-        imgCont.appendChild(imgSrc);
-        imgCont.appendChild(hoverButton);
+        // agrega los elementos en los contenedores 
+        imgContainer.appendChild(img);
+        imgContainer.appendChild(hoverButton);
+        gridItem.appendChild(imgContainer);
         gridContainer.appendChild(gridItem);
     });
 }
@@ -55,16 +59,16 @@ gridBuild([
     "spaimg3.jpeg",
     "spaimg4.jpeg",
     "spaimg5.jpeg",
-    "spaimg20.jpg",
+    "spaimg12.jpeg",
     "spaimg13.jpg",
     "spaimg14.jpg",
-    "spaimg21.jpeg",
+    "spaimg15.jpg",
     "spaimg17.jpg",
     "spaimg18.jpg",
-    "spaimg12.jpeg",
+    "spaimg19.jpg",
+    "spaimg20.jpg",
+    "spaimg21.jpeg",
     "spaimg22.jpg",
-    "spaimg14.jpg",
-    "spaimg15.jpg",
 ]);
 
 
