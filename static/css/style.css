@@ -3,7 +3,7 @@
     --second-color: #1B1B1B;
     --third-color: rgb(44, 44, 44);
     --fourth-color : rgba(245, 127, 35, 0.42);
-    --common-font: 'Open Sans', sans-serif;
+    --common-font: "Oswald", sans-serif;;
 
 
 }
@@ -302,6 +302,7 @@ main{
 #modalRegistro {
     text-align: center; /* Centrar el contenido del modal */
     border-radius: 10px ;
+    display: none;
 }
 
 #modalRegistro input[type="text"],
