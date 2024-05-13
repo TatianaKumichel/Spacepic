@@ -20,6 +20,11 @@ header{
     background-color: var(--primary-color);
 }
 
+body{
+    overflow-x: hidden;
+ }
+
+
 a{
     text-decoration: none;
     color: var(--primary-color);
@@ -649,11 +654,12 @@ footer{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	align-items: center;
-	align-content: center;
     font-family: var(--common-font);
     height: 100%;
     padding: 20px;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    align-content: stretch;
 }
 
 
@@ -797,13 +803,9 @@ footer{
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .grid-item{
-        /* height: 19vw; */
-    }
-
     .grid-hover-button {
         padding: 6px 12px;
-
+    }
     .slider-pictures {
         height: auto;
     }
@@ -823,6 +825,11 @@ footer{
     .agrupadoContactoComentario label {
         font-size: 2vw;
     }    
+
+    .agrupadoContactoDatos input {
+        width: 90%;
+    }
+
 }
 /* <-------------------------------- MOBILE ----------------------------------> */
 @media screen and (max-width: 576px) {
@@ -943,7 +950,6 @@ footer{
         width: 50%;
     }
 
-
     .datos {
         width: 50%;
     }    
@@ -954,6 +960,8 @@ footer{
     .agrupadoContactoComentario label {
         font-size: 2vw;
     }  
+
+ 
 
       
 }
