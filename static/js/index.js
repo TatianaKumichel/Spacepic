@@ -25,6 +25,7 @@ function cerrarModal() {
 
 function gridBuild(pictures){
     const gridContainer = document.querySelector(".grid-container");
+    gridContainer.innerHTML = '';
     pictures.forEach(element => {
         // crea los elementos div y les agrega la clase
         const gridItem = document.createElement('div');
@@ -51,25 +52,57 @@ function gridBuild(pictures){
     });
 }
 
-// Llamada a la funcion gridBuild() pasando un array con los nombres de las imagenes como parametro
+// Esta funcion llama al constructor del grid evaluando la cantidad
+// de imagenes que debe pasar dependiendo de los media querys
+function callBuilder(){
+    // Lista de imagenes para agregar al grid
+    let images = [
+        "spaimg1.jpeg", 
+        "spaimg2.jpeg",
+        "spaimg3.jpeg",
+        "spaimg4.jpeg",
+        "spaimg5.jpeg",
+        "spaimg12.jpeg",
+        "spaimg13.jpg",
+        "spaimg14.jpg",
+        "spaimg15.jpg",
+        "spaimg17.jpg",
+        "spaimg18.jpg",
+        "spaimg19.jpg",
+        "spaimg20.jpg",
+        "spaimg21.jpeg",
+        "spaimg22.jpg",
+    ];
 
-gridBuild([
-    "spaimg1.jpeg", 
-    "spaimg2.jpeg",
-    "spaimg3.jpeg",
-    "spaimg4.jpeg",
-    "spaimg5.jpeg",
-    "spaimg12.jpeg",
-    "spaimg13.jpg",
-    "spaimg14.jpg",
-    "spaimg15.jpg",
-    "spaimg17.jpg",
-    "spaimg18.jpg",
-    "spaimg19.jpg",
-    "spaimg20.jpg",
-    "spaimg21.jpeg",
-    "spaimg22.jpg",
-]);
+    // determina la cantidad de columnas del grid dependiendo del media query activo
+    let gridColumns;
+    if (window.matchMedia('(max-width: 576px)').matches) {
+        gridColumns = 2;
+    } else if (window.matchMedia('(max-width: 768px)').matches) {
+        gridColumns = 3;
+    } else if (window.matchMedia('(max-width: 1000px)').matches) {
+        gridColumns = 5; 
+    } else {
+        gridColumns = 5;
+    }
+
+    // Llama a la funcion para construir el grid pasando la cantidad de imagenes 
+    // que sean multiplos de la cantidad de columnas activas 
+    let remainder = images.length % gridColumns
+    if (remainder==0){ 
+        gridBuild(images);
+    }else{
+        gridBuild(images.slice(0,-(remainder)));
+    }
+}
+
+
+// Llama a la función cuando la ventana cambia de tamaño
+window.addEventListener('resize', callBuilder);
+
+// Llama a la función al cargar la página para obtener el estado inicial
+callBuilder();
+
 
 
 /*Cuando se hace click en el botón, muestra el submenu*/
