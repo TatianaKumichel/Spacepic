@@ -948,7 +948,7 @@ footer{
 
     footer {
         font-size: small;
-
+        height: 90%;
     }
     .ulFooter{
         list-style:none;
