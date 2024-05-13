@@ -2,6 +2,7 @@
     --primary-color: #FFF;
     --second-color: #1B1B1B;
     --third-color: rgb(44, 44, 44);
+    --fourth-color : rgba(245, 127, 35, 0.42);
     --common-font: 'Open Sans', sans-serif;
 
 
@@ -19,6 +20,7 @@
 header{
     background-color: var(--primary-color);
 }
+
 
 body{
     overflow-x: hidden;
@@ -262,12 +264,12 @@ main{
 }
 
 .modal-content {
-
+    display:flex;
+    flex-direction: column;
     margin: 5% auto; 
     padding: 20px;
     border: 1px solid #101313;
     width: 50%;
-    max-width: 600px;
     background-image: url('/static/img/europe-night-viewed-space-city-260nw-1072726052.webp'); /* Ruta de la imagen de fondo */
     background-size: cover; /* Ajustar la imagen al tamaño del modal */
     background-position: center; /* Centrar la imagen */
@@ -275,11 +277,15 @@ main{
 
 }
 
+.modal-content  span {
+    text-align: right;
+}
+
+
 .close {
-    color: #8a8b28; 
+    color: #e1e2b8; 
     font-size: 28px;
     font-weight: bold;
-    position: absolute;/*ajusra la posicion*/
     top: 5px;
     right: 10px;
     cursor: pointer;/* Cambiar el cursor al pasar sobre el botón */
@@ -287,39 +293,43 @@ main{
 
 .close:hover,
 .close:focus {
-    color: black;
+    color:grey;
     text-decoration:none;
     cursor: pointer;
 
 }
 
 #modalRegistro {
-
-    
     text-align: center; /* Centrar el contenido del modal */
-    border-radius: 10px
-    
+    border-radius: 10px ;
 }
+
 #modalRegistro input[type="text"],
 #modalRegistro input[type="email"]{
-
     font-size: 20px;
-    border-radius: 5px; /* Redondear los bordes */
+    border-radius: 10px; /* Redondear los bordes */
     padding: 5px; /* Añadir un poco de espacio alrededor del texto */
-    margin-bottom: 10px; /* Espacio entre los campos */
+    margin-bottom: 5px; /* Espacio entre los campos */
     width: 200px; 
-    
+    border-width: 0;    
 }
 #modalRegistro input[type="submit"]{
-
-    border-radius: 5px;
-    padding: 5px; 
-    margin-bottom: 10px; 
+    border-radius: 10px;
+    border-width: 0;
+    padding: 5px;  
     width: 150px; 
     font-size: 20px;
-
-
+    background-color: green;
+    color: white;
 }
+
+.formRegistro label {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 80%;
+    text-align: left;
+}
+
 
 
 /* Estilo para el encabezado "Registro" */
@@ -328,7 +338,7 @@ main{
     font-family: var(--common-font); /* Cambiar la fuente del encabezado */
     font-size: 30px; /* Cambiar el tamaño de la letra del encabezado */
     font-weight: bold; /* Establecer negrita para el encabezado */
-    margin-bottom: 20px; /* Añadir espacio debajo del encabezado */
+    margin-bottom: 40px; /* Añadir espacio debajo del encabezado */
 }
 #modalRegistro form {
 
@@ -336,10 +346,12 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color:#e1e2b8;
-
+    color:white;
+    
     
 }
+
+
 
 /*Estilos para Header NAV*/
 .containerMenu {
@@ -595,7 +607,7 @@ footer{
     padding: 20px;
     text-align: center;
     position: relative;
-    background-color: rgba(245, 127, 35, 0.42);
+    background-color: var(--fourth-color);
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
     font-family: var(--common-font);
@@ -711,7 +723,7 @@ footer{
     padding: 8px;
     font-weight: bold;
     text-transform: uppercase;
-    background-color: rgba(245, 127, 35, 0.42);
+    background-color: var(--fourth-color);
     color: white;
     border: 0;
 }
@@ -762,6 +774,12 @@ footer{
 
 @media screen and (max-width: 768px) {
 
+    .modal-content {
+        width: auto;
+        height: 80%;
+    }
+
+    
     .carrousel {
         height: 80%
 
