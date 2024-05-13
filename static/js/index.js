@@ -23,11 +23,11 @@ function cerrarModal() {
 
 // Esta funcion agrega las imagenes al grid
 
-function gridBuild(pictures){
+function gridBuilder(pictures){
     const gridContainer = document.querySelector(".grid-container");
     gridContainer.innerHTML = '';
     pictures.forEach(element => {
-        // crea los elementos div y les agrega la clase
+        // crea un elemento div y le agrega la clase
         const gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
         
@@ -54,7 +54,7 @@ function gridBuild(pictures){
 
 // Esta funcion llama al constructor del grid evaluando la cantidad
 // de imagenes que debe pasar dependiendo de los media querys
-function callBuilder(){
+function callGridBuilder(){
     // Lista de imagenes para agregar al grid
     let images = [
         "spaimg1.jpeg", 
@@ -87,22 +87,38 @@ function callBuilder(){
     }
 
     // Llama a la funcion para construir el grid pasando la cantidad de imagenes 
-    // que sean multiplos de la cantidad de columnas activas 
+    // cuidando que no queden filas INCOMPLETAS
     let remainder = images.length % gridColumns
     if (remainder==0){ 
-        gridBuild(images);
+        gridBuilder(images);
     }else{
-        gridBuild(images.slice(0,-(remainder)));
+        gridBuilder(images.slice(0,-(remainder)));
     }
 }
 
 
-// Llama a la función cuando la ventana cambia de tamaño
-window.addEventListener('resize', callBuilder);
+// Llama al constructor del grid al cargar la página
+callGridBuilder();
 
-// Llama a la función al cargar la página para obtener el estado inicial
-callBuilder();
+// Agrega un listener para llamar al constructor del grid cuando la ventana cambia de tamaño
+// Se asegura de limitar la frecuencia de ejecucion utilizando DEBOUNCE 
 
+// DEBOUNCE
+function debounce(func, delay) {
+    let timerId;
+    return function (...args) {
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+      timerId = setTimeout(() => {
+        func.apply(this, args);
+        timerId = null;
+      }, delay);
+    };
+  }
+
+// Listener
+window.addEventListener('resize', debounce(callGridBuilder,300)); //300 ms
 
 
 /*Cuando se hace click en el botón, muestra el submenu*/
