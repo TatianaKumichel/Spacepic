@@ -25,7 +25,7 @@ function cerrarModal() {
 
 function gridBuilder(pictures){
     const gridContainer = document.querySelector(".grid-container");
-    gridContainer.innerHTML = '';
+        gridContainer.innerHTML = '';
     pictures.forEach(element => {
         // crea un elemento div y le agrega la clase
         const gridItem = document.createElement('div');
@@ -98,8 +98,9 @@ function callGridBuilder(){
 
 
 // Llama al constructor del grid al cargar la página
-callGridBuilder();
+document.addEventListener('DOMContentLoaded', callGridBuilder());
 
+    
 // Agrega un listener para llamar al constructor del grid cuando la ventana cambia de tamaño
 // Se asegura de limitar la frecuencia de ejecucion utilizando DEBOUNCE 
 
