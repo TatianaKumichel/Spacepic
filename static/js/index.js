@@ -1,8 +1,9 @@
 
 // Esta función muestra el modal de registro en la página
+const modal = document.getElementById('modalRegistro');
+
 function mostrarModal() {
     // Obtiene el elemento modal de registro por su ID
-    var modal = document.getElementById('modalRegistro');
     // Verifica si el modal existe
     if (modal) {
         // Si el modal existe, cambia su estilo para mostrarlo (display: block)
@@ -12,8 +13,7 @@ function mostrarModal() {
 
 // Esta función cierra el modal de registro
 function cerrarModal() {
-    var modal = document.getElementById('modalRegistro');
-    
+    //var modal = document.getElementById('modalRegistro');
     if (modal) {
         modal.style.display = 'none';
     }
@@ -23,24 +23,24 @@ function cerrarModal() {
 
 // Esta funcion agrega las imagenes al grid
 
-function gridBuilder(pictures){
-    const gridContainer = document.querySelector(".grid-container");
-        gridContainer.innerHTML = '';
+function gridBuilder(pictures) {
+    let gridContainer = document.querySelector(".grid-container");
+    gridContainer.innerHTML = '';
     pictures.forEach(element => {
         // crea un elemento div y le agrega la clase
-        const gridItem = document.createElement('div');
+        let gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
         
-        const imgContainer = document.createElement('div');
+        let imgContainer = document.createElement('div');
         imgContainer.classList.add('grid-image-container');
 
         // crea un elemento img y le agrega el source y el alt
-        const img = document.createElement('img');
+        let img = document.createElement('img');
         img.src = `./static/img/${element}`;
         img.alt = element;
 
         // crea un elemento button y le agrega el texto y la clase
-        const hoverButton = document.createElement('button');
+        let hoverButton = document.createElement('button');
         hoverButton.classList.add('grid-hover-button');
         hoverButton.textContent = 'Comprar';
 
@@ -134,7 +134,7 @@ function ShowHideMenu() {
       var dropdowns = document.getElementsByClassName("navStyle");
       console.log(dropdowns)
       var i;
-      for (i = 0;  i < dropdowns.length; i++) {
+      for (i = 0;  i <dropdowns.length; i++) {
         var openDropdown = dropdowns[i];
         console.log(openDropdown)
         if (openDropdown.classList.contains('showNav')){
@@ -177,21 +177,24 @@ function sideScroll(element,direction,speed,distance,step){
 function validarFormulario() {
     var nombre = document.getElementById('nombre').value;
     var email = document.getElementById('email').value;
-    var mensaje = document.getElementById('mensaje').value;
-    var motivo = document.getElementById('motivo').value;
-    var imagen = document.getElementById('imagen').value;
+    var telefono = document.getElementById('telefono').value;
+    var comentario = document.getElementById('comentario').value;
+    var file = document.getElementById('file').value;
+    var suscripcion = document.getElementById('suscripcion');
 
-    var nombreError = document.getElementById('nombreError');
-    var emailError = document.getElementById('emailError');
-    var mensajeError = document.getElementById('mensajeError');
-    var motivoError = document.getElementById('motivoError');
-    var imagenError = document.getElementById('imagenError');
+    var nombreError = document.querySelector('.nombre-error');
+    var emailError = document.querySelector('.email-error');
+    var telefonoError = document.querySelector('.telefono-error');
+    var comentarioError = document.querySelector('.comentario-error');
+    var fileError = document.querySelector('.file-error');
+    var suscripcionError = document.querySelector('.suscripcion-error');
 
     nombreError.textContent = '';
     emailError.textContent = '';
-    mensajeError.textContent = '';
-    motivoError.textContent = '';
-    imagenError.textContent = '';
+    comentarioError.textContent = '';
+    telefonoError.textContent = '';
+    fileError.textContent = '';
+    suscripcionError.textContent = '';
 
     var validado = true;
 
@@ -205,15 +208,23 @@ function validarFormulario() {
         validado = false;
     }
 
-    // Agregar más validaciones según sea necesario...
-
-    if (motivo === '') {
-        motivoError.textContent = 'Por favor, selecciona un motivo';
+    if (telefono === '') {
+        telefonoError.textContent = 'Por favor, ingresa tu teléfono';
         validado = false;
     }
 
-    if (imagen === '') {
-        imagenError.textContent = 'Por favor, adjunta una imagen';
+    if (file === '') {
+        fileError.textContent = 'Por favor, adjunta una imagen';
+        validado = false;
+    }
+
+    if (comentario === '') {
+        comentarioError.textContent = 'Por favor, ingrese un comentario';
+        validado = false;
+    }
+    
+    if (!suscripcion.checked) {
+        suscripcionError.textContent = 'Por favor, haga click si desea aceptar suscripciones';
         validado = false;
     }
 
