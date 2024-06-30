@@ -1,3 +1,31 @@
+const BASEURL = 'http://127.0.0.1:5000';
+
+/**
+ * Función para realizar una petición fetch con JSON.
+ * @param {string} url - La URL a la que se realizará la petición.
+ * @param {string} method - El método HTTP a usar (GET, POST, PUT, DELETE, etc.).
+ * @param {Object} [data=null] - Los datos a enviar en el cuerpo de la petición.
+ * @returns {Promise<Object>} - Una promesa que resuelve con la respuesta en formato JSON.
+ */
+async function fetchData(url, method, data = null) {
+    const options = {
+        method: method,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: data ? JSON.stringify(data) : null,  // Si hay datos, los convierte a JSON y los incluye en el cuerpo
+    };
+    try {
+      const response = await fetch(url, options);  // Realiza la petición fetch
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+      return await response.json();  // Devuelve la respuesta en formato JSON
+    } catch (error) {
+      console.error('Fetch error:', error);
+      alert('An error occurred while fetching data. Please try again.');
+    }
+  }
 
 // Esta función muestra el modal de registro en la página
 const modal = document.getElementById('modalRegistro');
@@ -19,10 +47,7 @@ function cerrarModal() {
     }
 }
 
-
-
 // Esta funcion agrega las imagenes al grid
-
 function gridBuilder(pictures) {
     let gridContainer = document.querySelector(".grid-container");
     gridContainer.innerHTML = '';
@@ -30,20 +55,16 @@ function gridBuilder(pictures) {
         // crea un elemento div y le agrega la clase
         let gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
-        
         let imgContainer = document.createElement('div');
         imgContainer.classList.add('grid-image-container');
-
         // crea un elemento img y le agrega el source y el alt
         let img = document.createElement('img');
-        img.src = `./static/img/${element}`;
-        img.alt = element;
-
+        img.src = `${element.url}`;
+        img.alt = element.name;
         // crea un elemento button y le agrega el texto y la clase
         let hoverButton = document.createElement('button');
         hoverButton.classList.add('grid-hover-button');
         hoverButton.textContent = 'Comprar';
-
         // agrega los elementos en los contenedores 
         imgContainer.appendChild(img);
         imgContainer.appendChild(hoverButton);
@@ -54,25 +75,26 @@ function gridBuilder(pictures) {
 
 // Esta funcion llama al constructor del grid evaluando la cantidad
 // de imagenes que debe pasar dependiendo de los media querys
-function callGridBuilder(){
+async function callGridBuilder(){
     // Lista de imagenes para agregar al grid
-    let images = [
-        "spaimg1.jpeg", 
-        "spaimg2.jpeg",
-        "spaimg3.jpeg",
-        "spaimg4.jpeg",
-        "spaimg5.jpeg",
-        "spaimg12.jpeg",
-        "spaimg13.jpg",
-        "spaimg14.jpg",
-        "spaimg15.jpg",
-        "spaimg17.jpg",
-        "spaimg18.jpg",
-        "spaimg19.jpg",
-        "spaimg20.jpg",
-        "spaimg21.jpeg",
-        "spaimg22.jpg",
-    ];
+    // let images = [
+    //     "spaimg1.jpeg", 
+    //     "spaimg2.jpeg",
+    //     "spaimg3.jpeg",
+    //     "spaimg4.jpeg",
+    //     "spaimg5.jpeg",
+    //     "spaimg12.jpeg",
+    //     "spaimg13.jpg",
+    //     "spaimg14.jpg",
+    //     "spaimg15.jpg",
+    //     "spaimg17.jpg",
+    //     "spaimg18.jpg",
+    //     "spaimg19.jpg",
+    //     "spaimg20.jpg",
+    //     "spaimg21.jpeg",
+    //     "spaimg22.jpg",];
+
+    let images =  await fetchData(BASEURL+'/pictures', 'GET');
 
     // determina la cantidad de columnas del grid dependiendo del media query activo
     let gridColumns;
@@ -85,7 +107,6 @@ function callGridBuilder(){
     } else {
         gridColumns = 5;
     }
-
     // Llama a la funcion para construir el grid pasando la cantidad de imagenes 
     // cuidando que no queden filas INCOMPLETAS
     let remainder = images.length % gridColumns
@@ -95,15 +116,9 @@ function callGridBuilder(){
         gridBuilder(images.slice(0,-(remainder)));
     }
 }
-
-
-// Llama al constructor del grid al cargar la página
-document.addEventListener('DOMContentLoaded', callGridBuilder());
-
     
 // Agrega un listener para llamar al constructor del grid cuando la ventana cambia de tamaño
 // Se asegura de limitar la frecuencia de ejecucion utilizando DEBOUNCE 
-
 // DEBOUNCE
 function debounce(func, delay) {
     let timerId;
@@ -118,9 +133,11 @@ function debounce(func, delay) {
     };
   }
 
+// ************************ ESTO SE EJECUTA AL CARGAR INDEX.JS !!!!! ***************
+// Llama al constructor del grid al cargar la página
+document.addEventListener('DOMContentLoaded', callGridBuilder());
 // Listener
 window.addEventListener('resize', debounce(callGridBuilder,300)); //300 ms
-
 
 /*Cuando se hace click en el botón, muestra el submenu*/
 function ShowHideMenu() {   
