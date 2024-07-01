@@ -7,21 +7,21 @@ const BASEURL = 'http://127.0.0.1:5000';
 * @returns {Promise<Object>} - Una promesa que resuelve con la respuesta en formato JSON.
 */
 async function fetchData(url, method, data = null) { //para conectarse con cualquier ruta, metodo y datos que se envian al servidor
-const options = {
-method: method,
-headers: {
-'Content-Type': 'application/json',
-},
-body: data ? JSON.stringify(data) : null, // Si hay datos, los convierte a JSON y los incluye en el cuerpo
-};
+    const options = {
+        method: method,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: data ? JSON.stringify(data) : null, // Si hay datos, los convierte a JSON y los incluye en el cuerpo
+        };
 try {
-const response = await fetch(url, options); // Realiza la petición fetch
-if (!response.ok) {
-throw new Error(`Error: ${response.statusText}`);
-}
+    const response = await fetch(url, options); // Realiza la petición fetch
+    if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+    }
 return await response.json(); // Devuelve la respuesta en formato JSON
-} catch (error) {
-console.error('Fetch error:', error);
+    } catch (error) {
+    console.error('Fetch error:', error);
 alert('An error occurred while fetching data. Please try again.');
 }
 }
@@ -40,8 +40,8 @@ async function mostrarUsuarios(){
     <td>${usuario.nombre}</td>
     <td>${usuario.email}</td>
     <td>
-    <button class="btn-cac" onclick='updateUsuario(${usuario.id})'><i class="fa fa-pencil" ></button></i>
-    <button class="btn-cac" onclick='deleteUsuario(${usuario.id})'><i class="fa fa-trash" ></button></i>
+    <button class="btn-user" onclick='updateUsuario(${usuario.id})'><i class="fa fa-pencil" ></button></i>
+    <button class="btn-user" onclick='deleteUsuario(${usuario.id})'><i class="fa fa-trash" ></button></i>
     </td>
     </tr>`;
     tablaUsuarios.insertAdjacentHTML("beforeend",tr);
@@ -77,7 +77,7 @@ async function saveUsuario(){
     let result = null;
 // Si hay un id, realiza una petición PUT para actualizar el usuario existente
 if(id!==""){
-    result = await fetchData(`${BASEURL}/usuarios${id}`, 'PUT', usuarioData);
+    result = await fetchData(`${BASEURL}/usuarios/${id}`, 'PUT', usuarioData);
 }else{
 // Si no hay id, realiza una petición POST para crear una nuevo usuario
 result = await fetchData(`${BASEURL}/usuarios`, 'POST', usuarioData);

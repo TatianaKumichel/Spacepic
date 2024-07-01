@@ -1,6 +1,25 @@
+:root{
+    --primary-color: #FFF;
+    --second-color: #1B1B1B;
+    --third-color: #00FF00;
+    --fourth-color : rgba(245, 127, 35, 0.42);
+    --common-font: "Oswald", sans-serif;;
+
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--common-font);
+}
+
+
+
 body {
-    background-color: black;
-    color: #00FF00;
+    background-color: var(--second-color);
+    color: var(--primary-color);
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
@@ -10,14 +29,14 @@ body {
 }
 
 h3 {
-    color: #00FF00;
+    color: var(--primary-color);
 }
 
 form {
     width: 80%;
     margin-bottom: 20px;
     padding: 20px;
-    border: 2px solid #00FF00;
+    border: 2px solid var(--fourth-color);
     border-radius: 10px;
     background-color: black;
 }
@@ -39,15 +58,15 @@ form {
 .input-search {
     width: 100%;
     padding: 10px;
-    border: 2px solid #00FF00;
+    border: 2px solid var(--fourth-color);
     border-radius: 5px;
     background-color: black;
     color: #00FF00;
 }
 
-.btn-cac {
+.btn-user {
     padding: 10px 20px;
-    border: 2px solid #00FF00;
+    border: 2px solid var(--fourth-color);
     border-radius: 5px;
     background-color: black;
     color: #00FF00;
@@ -55,8 +74,8 @@ form {
     margin-top: 10px;
 }
 
-.btn-cac:hover {
-    background-color: #00FF00;
+.btn-user:hover {
+    background-color: var(--primary-color);
     color: black;
 }
 
@@ -72,7 +91,7 @@ table {
 }
 
 table, th, td {
-    border: 2px solid #00FF00;
+    border: 2px solid var(--fourth-color);
 }
 
 th, td {
@@ -82,7 +101,7 @@ th, td {
 
 th {
     background-color: black;
-    color: #00FF00;
+    color: var(--third-color);
 }
 
 tbody tr:nth-child(even) {
