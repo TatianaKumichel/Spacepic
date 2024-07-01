@@ -99,14 +99,14 @@ mostrarUsuarios();
 * de acuedo al indice del mismo
 * @param {number} id posición del array que se va a eliminar
 */
-function deleteUsuario(id){
+function deleteUsuario(user_id){
     Swal.fire({
     title: "Esta seguro de eliminar el usuario?",
     showCancelButton: true,
     confirmButtonText: "Eliminar",
     }).then(async (result) => {
     if (result.isConfirmed) {
-    let response = await fetchData(`${BASEURL}/usuarios${id}`, 'DELETE');
+    let response = await fetchData(`${BASEURL}/usuarios/${user_id}`, 'DELETE');
     mostrarUsuarios();
     Swal.fire(response.message, "", "success");
     }
