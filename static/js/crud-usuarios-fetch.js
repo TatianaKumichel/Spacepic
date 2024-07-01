@@ -6,6 +6,16 @@ const BASEURL = 'http://127.0.0.1:5000';
 * @param {Object} [data=null] - Los datos a enviar en el cuerpo de la petición.
 * @returns {Promise<Object>} - Una promesa que resuelve con la respuesta en formato JSON.
 */
+
+/**
+ * Función para validar si un string es un email válido
+ * @param {string} email - El email a validar
+ * @returns {boolean} - True si es un email válido, false en caso contrario
+ */
+function validarEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
 async function fetchData(url, method, data = null) { //para conectarse con cualquier ruta, metodo y datos que se envian al servidor
     const options = {
         method: method,
@@ -59,10 +69,10 @@ async function saveUsuario(){
     const email = document.querySelector('#email').value;
 
     //VALIDACION DE FORMULARIO
-    if (!nombre || !email ) {
+    if (!nombre || !email || !validarEmail(email)) {
     Swal.fire({
     title: 'Error!',
-    text: 'Por favor completa todos los campos.',
+    text: 'Por favor completa todos los campos y asegurate que el email sea valido.',
     icon: 'error',
     confirmButtonText: 'Cerrar'
     });
