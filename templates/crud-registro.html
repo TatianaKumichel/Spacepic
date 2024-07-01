@@ -4,14 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Usuarios CRUD</title>
+
+    <link rel="icon" href="./static/img/favicon.ico">
+    <!--  Fonts     -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../static/css/style-crud-usuarios.css">
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
+    <header>
+        <div class="containerMenu">
+            <div>
+                <a href="./index.html">                
+                    <img src="../static/img/logo.png" alt="Logo" class="logoImg">
+                    <span class="logoFont">
+                        SPACEPIC
+                    </span>
+                </a>
+            </div>
+            <div>
+                <div class="menuMobileList">
+                    <img src="../static/img/listaMenu.png" alt="Logo" id="imgMobileListID" class="imgClick" onclick="ShowHideMenu()">
+                </div>                       
+                <nav id="navStyleId" class="navStyle">
+                    <a href="../index.html">Home</a>
+                    <a href="#grid">Imagenes/Cuadros</a>
+                    <a href="#contacto">Contacto</a>
+                    <a href="#testimonios">Nosotros</a>
+                    <a href="#modalRegistro" onclick="mostrarModal()">Ingresar</a> 
+                </nav>
+            </div>
+        </div>
+    </header>
     <form action="" id="form-usuario">
         <div class="d-flex">
             <div class="form-control d-flex-column">
-                <label for="id">id</label>
-                <input type="text" class="input-search" name="id" id="id">
+                <label for="id"></label>
+                <input type="hidden" type="text" class="input-search" name="id" id="id">
             </div>
             <div class="form-control d-flex-column">
                 <label for="nombre">nombre</label>
@@ -21,7 +53,7 @@
                 <label for="email">email</label>
                 <input type="text" class="input-search" name="email" id="email">
             </div>
-            <button class="btn-cac" type="button" id="btn-save-usuario">Agregar</button>
+            <button class="btn-user" type="button" id="btn-save-usuario">Agregar</button>
         </div>
     </form>
 
@@ -40,6 +72,43 @@
             </tbody>
         </table>
     </section>
+    <footer>
+        <div class="divFooter">
+            <div class="mapFooter">
+                <h4>MAPA DEL SITIO</h4>
+                <nav>
+                    <ul class="ulFooter">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#grid">Imagenes/Cuadros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#testimonios">Nosotros</a></li>
+                        <li><a href="#modalRegistro" onclick="mostrarModal()">Ingresar</a></li>
+                        <li><a href="/templates/crud-registro.html">CRUD</a></li>
+                    </ul>
+                </nav>
+            </div>            
+            <div class="contactFooter">
+                <h4>CONTACTO</h4>
+                <a href="mailto:info@spacepi.com"><p>info@spacepic.com</p></a>
+                <div class="telFooter">
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i>
+                        <p>011-1111-1111</p>
+                    </a>
+                </div>
+                <div class="divRedesFooter">
+                    <h4>REDES SOCIALES</h4>
+                    <nav class="iconsFooterSM">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+                    </nav>
+                </div>
+            </div>
+        </div>   
+        <p class="copyrightFooter">Todos los Derechos Reservados <span>SPACEPIC 2024</span>.</p>        
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <script src="../static/js/crud-usuarios-fetch.js"></script>
