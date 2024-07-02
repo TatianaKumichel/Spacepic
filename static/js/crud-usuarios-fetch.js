@@ -43,20 +43,20 @@ alert('An error occurred while fetching data. Please try again.');
 async function mostrarUsuarios(){
     let usuarios = await fetchData(BASEURL+'/usuarios', 'GET');
     const tablaUsuarios = document.querySelector('#list-tabla-usuarios tbody');
-    tablaUsuarios.innerHTML='';
+        tablaUsuarios.innerHTML='';
     usuarios.forEach((usuario, index) => {
-    let tr = `<tr>
-    <td>${usuario.id}</td>
-    <td>${usuario.nombre}</td>
-    <td>${usuario.email}</td>
-    <td>
-    <button class="btn-user" onclick='updateUsuario(${usuario.id})'><i class="fa fa-pencil" ></button></i>
-    <button class="btn-user" onclick='deleteUsuario(${usuario.id})'><i class="fa fa-trash" ></button></i>
-    </td>
-    </tr>`;
-    tablaUsuarios.insertAdjacentHTML("beforeend",tr);
+        let tr = `<tr>
+            <td>${usuario.id}</td>
+            <td>${usuario.nombre}</td>
+            <td>${usuario.email}</td>
+            <td>
+                <button class="btn-user" onclick='updateUsuario(${usuario.nombre})'><i class="fa fa-pencil" ></button></i>
+                <button class="btn-user" onclick='deleteUsuario(${usuario.id})'><i class="fa fa-trash" ></button></i>
+            </td>
+        </tr>`;
+        tablaUsuarios.insertAdjacentHTML("beforeend",tr);
     });
-    }
+}
 
     /**
 * Función para comunicarse con el servidor para poder Crear o Actualizar
@@ -71,17 +71,17 @@ async function saveUsuario(){
     //VALIDACION DE FORMULARIO
     if (!nombre || !email || !validarEmail(email)) {
     Swal.fire({
-    title: 'Error!',
-    text: 'Por favor completa todos los campos y asegurate que el email sea valido.',
-    icon: 'error',
-    confirmButtonText: 'Cerrar'
+        title: 'Error!',
+        text: 'Por favor completa todos los campos y asegurate que el email sea valido.',
+        icon: 'error',
+        confirmButtonText: 'Cerrar'
     });
     return;
     }
     // Crea un objeto con los datos 
     const usuarioData = {
-    nombre: nombre,
-    email: email,
+        nombre: nombre,
+        email: email,
     
     };
     let result = null;
@@ -123,8 +123,29 @@ function deleteUsuario(user_id){
     });
     }
 
+    /*
+    * Function que permite cargar el formulario con los datos del usuario para su edición
+    
+    * @param {number} id Id de la pelicula que se quiere editar
+   */
+    @param {String} nombre
+ 
+    async function updateUsuario(nombre){
+       //Buscamos en el servidor el usuario de acuerdo al nombre
+       let response = await fetchData(`${BASEURL}/usuarios/${nombre}`, 'GET');
+       const idUsuario = document.querySelector('#id-usuario');
+       const nombre = document.querySelector('#nombre');
+       const email = document.querySelector('#email');
+
+       
+       idUsuario.value = response.id_usuario;
+       nombre.value = response.nombre;
+       email.value = response.email;
+   }
 
 
+
+   
     // Escuchar el evento 'DOMContentLoaded' que se dispara cuando el
     // contenido del DOM ha sido completamente cargado y parseado.
    document.addEventListener('DOMContentLoaded',function(){
