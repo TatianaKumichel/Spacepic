@@ -128,9 +128,8 @@ function deleteUsuario(user_id){
     
     * @param {number} id Id de la pelicula que se quiere editar
    */
-    @param {String} nombre
- 
-    async function updateUsuario(nombre){
+    @param {String}
+     async function updateUsuario(nombre){
        //Buscamos en el servidor el usuario de acuerdo al nombre
        let response = await fetchData(`${BASEURL}/usuarios/${nombre}`, 'GET');
        const idUsuario = document.querySelector('#id-usuario');
