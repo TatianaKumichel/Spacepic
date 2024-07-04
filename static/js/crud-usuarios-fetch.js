@@ -106,7 +106,7 @@ mostrarUsuarios();
 
     /**
 * Function que permite eliminar un usuario del array del localstorage
-* de acuedo al indice del mismo
+* de acuerdo al indice del mismo
 * @param {number} id posición del array que se va a eliminar
 */
 function deleteUsuario(user_id){
@@ -123,15 +123,17 @@ function deleteUsuario(user_id){
     });
     }
 
-    /*
+
+    
+    /* 
     * Function que permite cargar el formulario con los datos del usuario para su edición
     
-    * @param {number} id Id de la pelicula que se quiere editar
-   */
-    @param {String}
-     async function updateUsuario(nombre){
-       //Buscamos en el servidor el usuario de acuerdo al nombre
-       let response = await fetchData(`${BASEURL}/usuarios/${nombre}`, 'GET');
+    * @param {number} id Id del campo que se quiere editar
+    
+ 
+    async function updateUsuario(id){
+       //Buscamos en el servidor el usuario de acuerdo al id
+       let response = await fetchData(`${BASEURL}/usuarios/${id}`, 'GET');
        const idUsuario = document.querySelector('#id-usuario');
        const nombre = document.querySelector('#nombre');
        const email = document.querySelector('#email');
@@ -141,6 +143,7 @@ function deleteUsuario(user_id){
        nombre.value = response.nombre;
        email.value = response.email;
    }
+   */
 
 
 
